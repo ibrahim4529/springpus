@@ -12,7 +12,7 @@ public @Data class Book {
     private Long id;
     private String title;
     private Integer amount;
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "author_id")
     private Author author;
 }
