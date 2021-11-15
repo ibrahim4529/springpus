@@ -24,9 +24,9 @@ Content-Type: application/json
 Accept: application/json
 
 {
-  "title": "Menjalani Hidup",
-  "authorId": 2,
-  "amount":10
+  "title": "Menjalani Bagus Dengan Simple",
+  "authorId": 1,
+  "amount":9
 }
 
 ###
