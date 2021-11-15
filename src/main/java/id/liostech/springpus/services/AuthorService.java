@@ -1,8 +1,8 @@
 package id.liostech.springpus.services;
 
 import id.liostech.springpus.entities.Author;
-import id.liostech.springpus.models.AuthorCreateRequest;
-import id.liostech.springpus.models.AuthorUpdateRequest;
+import id.liostech.springpus.dto.AuthorCreateRequest;
+import id.liostech.springpus.dto.AuthorUpdateRequest;
 
 import javax.transaction.Transactional;
 

@@ -1,8 +1,8 @@
 package id.liostech.springpus.services.impl;
 
 import id.liostech.springpus.entities.Author;
-import id.liostech.springpus.models.AuthorCreateRequest;
-import id.liostech.springpus.models.AuthorUpdateRequest;
+import id.liostech.springpus.dto.AuthorCreateRequest;
+import id.liostech.springpus.dto.AuthorUpdateRequest;
 import id.liostech.springpus.repositories.AuthorRepository;
 import id.liostech.springpus.services.AuthorService;
 import org.modelmapper.ModelMapper;

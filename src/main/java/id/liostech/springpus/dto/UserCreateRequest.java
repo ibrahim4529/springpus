@@ -1,4 +1,4 @@
-package id.liostech.springpus.models;
+package id.liostech.springpus.dto;
 
 import java.io.Serializable;
 

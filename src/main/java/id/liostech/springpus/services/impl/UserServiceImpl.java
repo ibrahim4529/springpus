@@ -1,7 +1,7 @@
 package id.liostech.springpus.services.impl;
 
 import id.liostech.springpus.entities.User;
-import id.liostech.springpus.models.UserCreateRequest;
+import id.liostech.springpus.dto.UserCreateRequest;
 import id.liostech.springpus.repositories.UserRepository;
 import id.liostech.springpus.services.UserService;
 import org.modelmapper.ModelMapper;

@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import id.liostech.springpus.entities.User;
-import id.liostech.springpus.models.UserCreateRequest;
+import id.liostech.springpus.dto.UserCreateRequest;
 import id.liostech.springpus.services.UserService;
 
 import org.springframework.web.bind.annotation.RequestBody;
@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 @RequestMapping(value = "api/users")
 public class UserController {
     @Autowired
-    UserService userService;
+    private UserService userService;
 
     @PostMapping(value="create")
     public User createUser(@RequestBody UserCreateRequest userCreateRequest) {

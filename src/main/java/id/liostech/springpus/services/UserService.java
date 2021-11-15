@@ -1,7 +1,7 @@
 package id.liostech.springpus.services;
 
 import id.liostech.springpus.entities.User;
-import id.liostech.springpus.models.UserCreateRequest;
+import id.liostech.springpus.dto.UserCreateRequest;
 import org.springframework.security.core.userdetails.UserDetailsService;
 
 import javax.transaction.Transactional;
