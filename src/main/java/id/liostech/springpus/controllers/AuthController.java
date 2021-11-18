@@ -32,7 +32,7 @@ public class AuthController {
     @Autowired
     private ModelMapper modelMapper;
     @Autowired
-    JwtUtil jwtUtil;
+    private JwtUtil jwtUtil;
 
 
     @PostMapping("/login")

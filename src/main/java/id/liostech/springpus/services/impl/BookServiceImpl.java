@@ -1,5 +1,6 @@
 package id.liostech.springpus.services.impl;
 
+import id.liostech.springpus.entities.Author;
 import id.liostech.springpus.entities.Book;
 import id.liostech.springpus.dto.request.BookCreateRequest;
 import id.liostech.springpus.repositories.AuthorRepository;
@@ -24,8 +25,9 @@ public class BookServiceImpl implements BookService {
     @Override
     public Book create(BookCreateRequest bookCreateRequest) {
         validationUtil.validate(bookCreateRequest);
+        Author author = authorRepository.getById(bookCreateRequest.getAuthorId());
         Book book = modelMapper.map(bookCreateRequest, Book.class);
-        book.setAuthor(authorRepository.getById(bookCreateRequest.getAuthorId()));
+        book.setAuthor(author);
         return bookRepository.save(book);
     }
 
