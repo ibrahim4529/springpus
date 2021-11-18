@@ -1,10 +1,11 @@
 package id.liostech.springpus.services.impl;
 
 import id.liostech.springpus.entities.Book;
-import id.liostech.springpus.dto.BookCreateRequest;
+import id.liostech.springpus.dto.request.BookCreateRequest;
 import id.liostech.springpus.repositories.AuthorRepository;
 import id.liostech.springpus.repositories.BookRepository;
 import id.liostech.springpus.services.BookService;
+import id.liostech.springpus.utils.ValidationUtil;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,8 +18,12 @@ public class BookServiceImpl implements BookService {
     private AuthorRepository authorRepository;
     @Autowired
     private ModelMapper modelMapper;
+    @Autowired
+    private ValidationUtil validationUtil;
+
     @Override
     public Book create(BookCreateRequest bookCreateRequest) {
+        validationUtil.validate(bookCreateRequest);
         Book book = modelMapper.map(bookCreateRequest, Book.class);
         book.setAuthor(authorRepository.getById(bookCreateRequest.getAuthorId()));
         return bookRepository.save(book);

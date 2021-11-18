@@ -1,4 +1,4 @@
-package id.liostech.springpus.dto;
+package id.liostech.springpus.dto.response;
 
 import lombok.Data;
 

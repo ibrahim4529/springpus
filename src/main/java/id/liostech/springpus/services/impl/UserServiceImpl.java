@@ -1,9 +1,10 @@
 package id.liostech.springpus.services.impl;
 
 import id.liostech.springpus.entities.User;
-import id.liostech.springpus.dto.UserCreateRequest;
+import id.liostech.springpus.dto.request.UserCreateRequest;
 import id.liostech.springpus.repositories.UserRepository;
 import id.liostech.springpus.services.UserService;
+import id.liostech.springpus.utils.ValidationUtil;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -20,15 +21,19 @@ public class UserServiceImpl implements UserService, UserDetailsService {
     private BCryptPasswordEncoder bCryptPasswordEncoder;
     @Autowired
     ModelMapper modelMapper;
+    @Autowired
+    ValidationUtil validationUtil;
 
     @Override
     public User create(UserCreateRequest createRequest) {
+        validationUtil.validate(createRequest);
         User user = modelMapper.map(createRequest, User.class);
         return userRepository.save(user);
     }
 
     @Override
     public User registerUser(UserCreateRequest createRequest) {
+        validationUtil.validate(createRequest);
         boolean userExists = userRepository.findByEmail(createRequest.getEmail()).isPresent();
         if(userExists){
             throw new RuntimeException(

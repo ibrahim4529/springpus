@@ -1,17 +1,13 @@
 package id.liostech.springpus.controllers;
 
-import id.liostech.springpus.dto.ApiResponse;
-import id.liostech.springpus.dto.BookCreateRequest;
+import id.liostech.springpus.dto.response.ApiResponse;
+import id.liostech.springpus.dto.request.BookCreateRequest;
 import id.liostech.springpus.entities.Book;
 import id.liostech.springpus.services.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.validation.Errors;
-import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.*;
-
-import javax.validation.Valid;
 
 @RestController
 @RequestMapping(path = "api/books")
@@ -34,20 +30,12 @@ public class BookController {
         }
     }
     @PostMapping
-    public ResponseEntity<?> createBook(@Valid @RequestBody BookCreateRequest bookCreateRequest, Errors errors){
+    public ResponseEntity<?> createBook(@RequestBody BookCreateRequest bookCreateRequest){
         ApiResponse response = new ApiResponse();
-        if(!errors.hasErrors()){
-            Book book = bookService.create(bookCreateRequest);
-            response.setStatus(true);
-            response.getMessages().add("Buku berhasil ditambahkan");
-            response.setData(book);
-            return ResponseEntity.ok(response);
-        }else{
-            for (ObjectError err: errors.getAllErrors()){
-                response.getMessages().add(err.getDefaultMessage());
-            }
-            response.setStatus(false);
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(response);
-        }
+        Book book = bookService.create(bookCreateRequest);
+        response.setStatus(true);
+        response.getMessages().add("Buku berhasil ditambahkan");
+        response.setData(book);
+        return ResponseEntity.ok(response);
     }
 }

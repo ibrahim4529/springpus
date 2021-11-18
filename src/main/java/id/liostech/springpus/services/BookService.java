@@ -1,7 +1,7 @@
 package id.liostech.springpus.services;
 
 import id.liostech.springpus.entities.Book;
-import id.liostech.springpus.dto.BookCreateRequest;
+import id.liostech.springpus.dto.request.BookCreateRequest;
 
 import javax.transaction.Transactional;
 

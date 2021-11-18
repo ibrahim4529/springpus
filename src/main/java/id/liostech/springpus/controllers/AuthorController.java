@@ -1,8 +1,8 @@
 package id.liostech.springpus.controllers;
 
-import id.liostech.springpus.dto.ApiResponse;
+import id.liostech.springpus.dto.response.ApiResponse;
 import id.liostech.springpus.entities.Author;
-import id.liostech.springpus.dto.AuthorCreateRequest;
+import id.liostech.springpus.dto.request.AuthorCreateRequest;
 import id.liostech.springpus.services.AuthorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

@@ -1,8 +1,7 @@
 package id.liostech.springpus.services.impl;
 
 import id.liostech.springpus.entities.Author;
-import id.liostech.springpus.dto.AuthorCreateRequest;
-import id.liostech.springpus.dto.AuthorUpdateRequest;
+import id.liostech.springpus.dto.request.AuthorCreateRequest;
 import id.liostech.springpus.repositories.AuthorRepository;
 import id.liostech.springpus.services.AuthorService;
 import org.modelmapper.ModelMapper;
@@ -19,10 +18,5 @@ public class AuthorServiceImpl implements AuthorService {
     public Author create(AuthorCreateRequest authorCreateRequest) {
         Author author = modelMapper.map(authorCreateRequest, Author.class);
         return authorRepository.save(author);
-    }
-
-    @Override
-    public Author update(AuthorUpdateRequest authorUpdateRequest) {
-        return null;
     }
 }
