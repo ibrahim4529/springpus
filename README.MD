@@ -15,5 +15,17 @@ Springpus is a perpus(library) app creating using java springboot
 
 #### TODO
 - [X] Design Entity
-- [ ] Add Crud Fungsionality
-- [ ] Add Auth Fungsionality
+- [X] Add Crud Fungsionality
+- [X] Add Auth Fungsionality
+- [ ] Add book borrowing process Fungsionality
+
+### What have I learned
+- [X] Cors And Filter In Spring
+- [X] Authentication Using JWT
+- [X] File Uploading
+- [X] Basic Crud
+- [X] Validation
+- [X] ObjcetMapper
+- [X] Lombok 
+- [ ] Paging 
+- [ ] Scheduling
