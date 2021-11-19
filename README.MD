@@ -29,3 +29,11 @@ Springpus is a perpus(library) app creating using java springboot
 - [X] Lombok 
 - [ ] Paging 
 - [ ] Scheduling
+
+
+### How To Run this Project
+This project using maven so you can run project same as another springboot app
+
+Note: This program only contain REST api if you want see how is look
+You can use postman or simple just run this client app
+[Springpus Client App](https://github.com/ibrahim4529/springpusclient)
