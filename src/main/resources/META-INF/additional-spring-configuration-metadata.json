@@ -4,6 +4,11 @@
       "name": "jwt.secretKey",
       "type": "java.lang.String",
       "description": "Secret key used for JWT."
+    },
+    {
+      "name": "upload.path",
+      "type": "java.lang.String",
+      "description": "File upload path"
     }
   ]
 }

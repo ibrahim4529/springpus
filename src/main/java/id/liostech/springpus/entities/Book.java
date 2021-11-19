@@ -19,6 +19,7 @@ public class Book implements Serializable {
     private Long id;
     private String title;
     private Integer amount;
+    private String img;
     @ManyToOne
     @JoinColumn(name="author_id")
     private Author author;

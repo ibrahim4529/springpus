@@ -9,4 +9,5 @@ import javax.transaction.Transactional;
 public interface BookService {
     Book create(BookCreateRequest bookCreateRequest);
     Iterable<Book> findAll();
+    void delete(Long id);
 }

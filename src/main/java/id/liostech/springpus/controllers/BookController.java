@@ -30,12 +30,30 @@ public class BookController {
         }
     }
     @PostMapping
-    public ResponseEntity<?> createBook(@RequestBody BookCreateRequest bookCreateRequest){
+    public ResponseEntity<?> createBook(@ModelAttribute BookCreateRequest bookCreateRequest){
         ApiResponse response = new ApiResponse();
         Book book = bookService.create(bookCreateRequest);
         response.setStatus(true);
         response.getMessages().add("Buku berhasil ditambahkan");
         response.setData(book);
+        return ResponseEntity.ok(response);
+    }
+
+    @DeleteMapping(path = "{id}")
+    public ResponseEntity<?> deleteBook(@PathVariable Long id){
+        ApiResponse response = new ApiResponse();
+        bookService.delete(id);
+        response.setStatus(true);
+        response.getMessages().add("Success Delete book");
+        return ResponseEntity.ok(response);
+    }
+
+    @GetMapping(path = "{id}")
+    public ResponseEntity<?> findByName(@PathVariable Long id){
+        ApiResponse response = new ApiResponse();
+        bookService.delete(id);
+        response.setStatus(true);
+        response.getMessages().add("Success Delete book");
         return ResponseEntity.ok(response);
     }
 }
