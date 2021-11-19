@@ -10,4 +10,7 @@ public interface BookService {
     Book create(BookCreateRequest bookCreateRequest);
     Iterable<Book> findAll();
     void delete(Long id);
+    Iterable<Book> findByTitle(String title);
+
+    Iterable<Book> findByTitleAndAuthor(String title, Long authorId);
 }

@@ -31,9 +31,10 @@ Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJpYnJhaGltMUBtYWlsLmNvbSIsI
 }
 
 ###
-GET http://localhost:8080/api/books
+GET http://localhost:8080/api/books/filter?title=&authorId=13
 Accept: application/json
-Authorization:
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJpYnJhaGltMUBtYWlsLmNvbSIsImV4cCI6MTYzNzMxNzc0MiwiaWF0IjoxNjM3Mjk5NzQyfQ.6PYxPqkOrcdlCzu-QepA3TlfNUOeoFGQn6h3GZMxDRRhDpoOTAcjKGQ-rPFYxEbDvDyRY3X8Y3ZEju2_i7b0Hg
+
 ###
 
 POST http://localhost:8080/api/auth/register

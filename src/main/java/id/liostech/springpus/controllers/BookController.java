@@ -48,12 +48,21 @@ public class BookController {
         return ResponseEntity.ok(response);
     }
 
-    @GetMapping(path = "{id}")
-    public ResponseEntity<?> findByName(@PathVariable Long id){
+    @GetMapping(path = "search")
+    public ResponseEntity<?> findByTitle(@RequestParam String title){
         ApiResponse response = new ApiResponse();
-        bookService.delete(id);
         response.setStatus(true);
+        response.setData(bookService.findByTitle(title));
         response.getMessages().add("Success Delete book");
+        return ResponseEntity.ok(response);
+    }
+
+    @GetMapping(path = "filter")
+    public ResponseEntity<?> findByTitleAndAuthor(@RequestParam String title, @RequestParam Long authorId){
+        ApiResponse response = new ApiResponse();
+        response.setStatus(true);
+        response.setData(bookService.findByTitleAndAuthor(title, authorId));
+        response.getMessages().add("Success load book");
         return ResponseEntity.ok(response);
     }
 }

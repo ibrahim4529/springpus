@@ -51,4 +51,14 @@ public class BookServiceImpl implements BookService {
         fileService.delete(image);
         bookRepository.delete(book);
     }
+
+    @Override
+    public Iterable<Book> findByTitle(String title) {
+        return bookRepository.findBookByTitleContaining(title);
+    }
+
+    @Override
+    public Iterable<Book> findByTitleAndAuthor(String title, Long authorId) {
+        return bookRepository.findBookByTitleContainingAndAuthorId(title, authorId);
+    }
 }
